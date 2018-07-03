@@ -1,0 +1,16 @@
+import com.xc.dao.LoginDao;
+
+public class LoginService {
+		public String loginService(String user, String pwd) {
+			LoginDao logindao = new LoginDao();
+			String count = logindao.login(user, pwd);
+			return count;
+		}
+		
+		public int registerService(String user, String pwd) {
+			LoginDao logindao = new LoginDao();
+			int count = logindao.register(user, pwd);
+			return count;
+			
+		}
+}
