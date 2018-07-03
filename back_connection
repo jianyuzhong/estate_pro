@@ -1,0 +1,22 @@
+import java.sql.DriverManager;
+import java.sql.Connection;
+
+public class DataConnection {
+	
+	private static  Connection con = null;
+	public static  Connection getConnection(){
+		String driver = "com.mysql.jdbc.Driver";
+		String url = "jdbc:mysql://localhost:3306/building?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+        String user = "root";
+        String password = "123456";
+        try {
+             //加载驱动程序
+        	 Class.forName(driver);
+        	 //1.getConnection()方法，连接MySQL数据库！！
+        	 con = DriverManager.getConnection(url,user,password);   	          
+	   }catch(Exception e) {     
+             e.printStackTrace();   
+       }
+        return con;
+	}
+}
