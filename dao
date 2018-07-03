@@ -1,0 +1,47 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.xc.common.DataConnection;
+
+public class LoginDao {
+	Connection conn =DataConnection.getConnection();
+	 
+	public String login(String user, String pwd){
+		String name =null;
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement("select * from user where username=? "
+					+ "and password=?");
+			ps.setString(1, user);
+			ps.setString(2, pwd);
+			ResultSet rs = ps.executeQuery();
+			    while(rs.next()){
+			    	name= rs.getString("username");
+			    }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		 
+		return name;
+	}
+	
+	public int register(String user, String pwd){
+		int count=0;
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement("insert into user(username,password) values(?,?)");
+			ps.setString(1, user);
+			ps.setString(2, pwd);
+			count = ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		return count;
+	}
+
+}
