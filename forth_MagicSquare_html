@@ -1,0 +1,8 @@
+<div class="wrap">
+			<div class="box1 box"><img  src="../img/box1.jpg" width="100%" height ="100%"></div>
+			<div class="box2 box"><img  src="../img/box2.jpg" width="100%" height ="100%"></div>
+			<div class="box3 box"><img  src="../img/box3.jpg" width="100%" height ="100%"></div>
+			<div class="box4 box"><img  src="../img/box4.jpg" width="100%" height ="100%"></div>
+			<div class="box5 box"><img  src="../img/box5.jpg" width="100%" height ="100%"></div>
+			<div class="box6 box"><img  src="../img/box6.jpg" width="100%" height ="100%"></div>
+</div><!--图片自加  -->
